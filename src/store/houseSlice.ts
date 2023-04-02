@@ -15,8 +15,8 @@ const initialState: housesStateType = {
     countries: ['Location (any)', 'United States', 'Canada'],
     country: 'Location (any)',
     price: '100$',
-    properties: ['Appartment', 'House'],
-    property: 'Property type',
+    properties: ['Property type (any)', 'Appartment', 'House'],
+    property: 'Property type (any)',
 };
 
 export const houseSlice = createSlice({
