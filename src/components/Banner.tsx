@@ -12,13 +12,19 @@ const Banner = () => {
                         House With Us.
                     </h1>
                     <p className='mb-8 max-w-[480px]'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Labore aspernatur officia, quaerat dicta soluta id illum
-                        eligendi ex quibusdam consequatur.
+                        Discover the ultimate vacation experience with our
+                        premier house rental website. We provide a one-stop-shop
+                        for all your vacation home needs, offering a variety of
+                        properties that cater to different budgets, group sizes,
+                        and tastes.
                     </p>
                 </div>
-                <div className='hidden flex-1 items-end justify-end lg:flex'>
-                    <img src={Image} alt='Banner House' />
+                <div className=' hidden flex-1 items-end justify-end md:flex'>
+                    <img
+                        src={Image}
+                        alt='Banner House'
+                        className='mx-auto md:mx-0'
+                    />
                 </div>
             </div>
             <Search />

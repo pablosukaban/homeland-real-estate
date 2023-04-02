@@ -30,7 +30,7 @@ const PropertyDropdown = () => {
                     <div className='text-[15px] font-medium leading-tight'>
                         {property}
                     </div>
-                    <div className=''>Select your place</div>
+                    <div className='text-[13px]'>Select your place</div>
                 </div>
                 {isOpen ? (
                     <RiArrowUpSLine className='dropdown-icon-secondary' />

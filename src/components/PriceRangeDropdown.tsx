@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
-import { RiArrowDownSLine, RiArrowUpSLine, RiMapPinLine } from 'react-icons/ri';
+import {
+    RiArrowDownSLine,
+    RiArrowUpSLine,
+    RiWallet3Line,
+} from 'react-icons/ri';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { houseSlice } from '../store/houseSlice';
 
-const CountryDropdown = () => {
+const PriceRangeDropdown = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const { countries, country } = useAppSelector((state) => state.house);
-    const { changeCountry } = houseSlice.actions;
+    const { price, prices } = useAppSelector((state) => state.house);
+    const { changePrice } = houseSlice.actions;
     const dispatch = useAppDispatch();
 
     const handleBtnClick = () => {
         setIsOpen((prev) => !prev);
     };
 
-    const handleCountryClick = (c: string) => {
-        dispatch(changeCountry(c));
+    const handlePropertyClick = (p: string) => {
+        dispatch(changePrice(p));
     };
 
     return (
@@ -25,12 +29,12 @@ const CountryDropdown = () => {
                 className='dropdown-btn w-full text-left'
                 onClick={handleBtnClick}
             >
-                <RiMapPinLine className='dropdown-icon-primary' />
+                <RiWallet3Line className='dropdown-icon-primary' />
                 <div>
                     <div className='text-[15px] font-medium leading-tight'>
-                        {country}
+                        {price}
                     </div>
-                    <div className='text-[13px]'>Select your place</div>
+                    <div className='text-[13px]'>Choose Price Range</div>
                 </div>
                 {isOpen ? (
                     <RiArrowUpSLine className='dropdown-icon-secondary' />
@@ -39,14 +43,14 @@ const CountryDropdown = () => {
                 )}
             </Menu.Button>
             <Menu.Items className='dropdown-menu'>
-                {countries.map((c, idx) => (
+                {prices.map((p, idx) => (
                     <Menu.Item
                         className='cursor-pointer transition hover:text-violet-700'
                         as='li'
                         key={idx}
-                        onClick={() => handleCountryClick(c)}
+                        onClick={() => handlePropertyClick(p)}
                     >
-                        {c}
+                        {p}
                     </Menu.Item>
                 ))}
             </Menu.Items>
@@ -54,4 +58,4 @@ const CountryDropdown = () => {
     );
 };
 
-export default CountryDropdown;
+export default PriceRangeDropdown;
