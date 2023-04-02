@@ -33,9 +33,9 @@ const CountryDropdown = () => {
                     <div className=''>Select your place</div>
                 </div>
                 {isOpen ? (
-                    <RiArrowDownSLine className='dropdown-icon-secondary' />
-                ) : (
                     <RiArrowUpSLine className='dropdown-icon-secondary' />
+                ) : (
+                    <RiArrowDownSLine className='dropdown-icon-secondary' />
                 )}
             </Menu.Button>
             <Menu.Items className='dropdown-menu'>
