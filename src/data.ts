@@ -54,7 +54,30 @@ import Agent10 from './assets/img/agents/agent10.png';
 import Agent11 from './assets/img/agents/agent11.png';
 import Agent12 from './assets/img/agents/agent12.png';
 
-export const housesData = [
+export type agentType = {
+    image: string;
+    name: string;
+    phone: string;
+};
+
+export type housesType = {
+    id: number;
+    type: string;
+    name: string;
+    description: string;
+    image: string;
+    imageLg: string;
+    country: string;
+    address: string;
+    bedrooms: string;
+    bathrooms: string;
+    surface: string;
+    year: string;
+    price: string;
+    agent: agentType;
+};
+
+export const housesData: housesType[] = [
     {
         id: 1,
         type: 'House',
