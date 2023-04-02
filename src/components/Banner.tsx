@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from '../assets/house-banner.png';
+import Image from '../assets/img/house-banner.png';
 import Search from './Search';
 
 const Banner = () => {
