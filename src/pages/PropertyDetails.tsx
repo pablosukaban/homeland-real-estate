@@ -24,6 +24,35 @@ const PropertyDetails = () => {
     }
 
     const handleSendMessage = () => {
+        if (
+            !nameRef.current ||
+            !emailRef.current ||
+            !phoneRef.current ||
+            !messageRef.current
+        ) {
+            return;
+        }
+
+        if (
+            !nameRef.current.value ||
+            !emailRef.current.value ||
+            !phoneRef.current.value ||
+            !messageRef.current.value
+        ) {
+            Toastify({
+                text: 'Fill every field!',
+                duration: 3000,
+                newWindow: true,
+                close: true,
+                gravity: 'bottom', // `top` or `bottom`
+                position: 'center', // `left`, `center` or `right`
+                className:
+                    'fixed bg-red-700 text-white px-5 py-4 rounded flex gap-2 right-2 bottom-2',
+            }).showToast();
+
+            return;
+        }
+
         Toastify({
             text: 'Message sent!',
             duration: 3000,
@@ -35,14 +64,6 @@ const PropertyDetails = () => {
             className:
                 'fixed bg-violet-700 text-white px-5 py-4 rounded flex gap-2 right-2 bottom-2',
         }).showToast();
-
-        if (
-            !nameRef.current ||
-            !emailRef.current ||
-            !phoneRef.current ||
-            !messageRef.current
-        )
-            return;
 
         nameRef.current.value = '';
         emailRef.current.value = '';
