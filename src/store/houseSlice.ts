@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { housesData, housesType } from '../data';
-import produce from 'immer';
 
 type housesStateType = {
     houses: housesType[];
