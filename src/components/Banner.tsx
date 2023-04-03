@@ -19,7 +19,7 @@ const Banner = () => {
                         and tastes.
                     </p>
                 </div>
-                <div className=' hidden flex-1 items-end justify-end md:flex'>
+                <div className=' hidden flex-1 items-end justify-end lg:flex'>
                     <img
                         src={Image}
                         alt='Banner House'
