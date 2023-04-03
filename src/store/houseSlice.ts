@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { housesData, housesType } from '../data';
+import { housesData, housesType, reviewersData, reviewType } from '../data';
 
 type housesStateType = {
     houses: housesType[];
@@ -10,6 +10,7 @@ type housesStateType = {
     properties: string[];
     price: string;
     prices: string[];
+    reviewers: reviewType[];
 };
 
 const initialState: housesStateType = {
@@ -29,6 +30,7 @@ const initialState: housesStateType = {
     ],
     properties: ['Property type (any)', 'Apartament', 'House'],
     property: 'Property type (any)',
+    reviewers: reviewersData,
 };
 
 const isDefault = (s: string) => {

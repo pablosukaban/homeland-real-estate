@@ -31,8 +31,6 @@ const usePagination = (
 
     const currentItems = getPaginatedData();
 
-    console.log('page');
-
     return {
         currentPage,
         pages,

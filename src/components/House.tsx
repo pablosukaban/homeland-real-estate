@@ -51,7 +51,7 @@ const House = ({ houseObj }: HouseProps) => {
                 </div>
             </div>
             <div className='mb-4 text-lg font-semibold text-violet-600'>
-                {price}
+                $ {price}
             </div>
         </div>
     );

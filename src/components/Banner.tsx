@@ -13,10 +13,7 @@ const Banner = () => {
                     </h1>
                     <p className='mb-8 max-w-[480px]'>
                         Discover the ultimate vacation experience with our
-                        premier house rental website. We provide a one-stop-shop
-                        for all your vacation home needs, offering a variety of
-                        properties that cater to different budgets, group sizes,
-                        and tastes.
+                        premier house rental website.
                     </p>
                 </div>
                 <div className=' hidden flex-1 items-end justify-end lg:flex'>

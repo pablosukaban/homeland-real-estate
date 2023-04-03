@@ -40,7 +40,7 @@ const PropertyDetails = () => {
             !messageRef.current.value
         ) {
             Toastify({
-                text: 'Fill every field!',
+                text: 'Fill in all the fields!',
                 duration: 3000,
                 newWindow: true,
                 close: true,

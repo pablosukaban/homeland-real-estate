@@ -41,29 +41,35 @@ const HouseList = () => {
     return (
         <section className='mb-20'>
             <div className='container mx-auto'>
+                <div className='flex flex-col items-center justify-between gap-2 px-[20px] md:flex-row'>
+                    <h1 className='text-2xl'>
+                        <span className='text-violet-700'>Available</span>{' '}
+                        Houses
+                    </h1>
+                    <div className='flex items-center justify-start gap-4'>
+                        {totalPages.length > 1 &&
+                            totalPages.map((page) => (
+                                <button
+                                    key={page}
+                                    onClick={() => handlePageChange(page)}
+                                    disabled={page === currentPage}
+                                    className={`border px-4 py-2 text-lg text-violet-500 ${
+                                        page === currentPage
+                                            ? 'border-violet-500'
+                                            : ''
+                                    }`}
+                                >
+                                    {page}
+                                </button>
+                            ))}
+                    </div>
+                </div>
                 <div className='mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-14'>
                     {currentItems.map((item) => (
                         <Link to={`/property/${item.id}`} key={item.id}>
                             <House houseObj={item} />
                         </Link>
                     ))}
-                </div>
-                <div className='flex items-center justify-center gap-4'>
-                    {totalPages.length > 1 &&
-                        totalPages.map((page) => (
-                            <button
-                                key={page}
-                                onClick={() => handlePageChange(page)}
-                                disabled={page === currentPage}
-                                className={`border px-5 py-3 text-lg text-violet-500 ${
-                                    page === currentPage
-                                        ? 'border-violet-500'
-                                        : ''
-                                }`}
-                            >
-                                {page}
-                            </button>
-                        ))}
                 </div>
             </div>
         </section>
