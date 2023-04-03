@@ -54,6 +54,10 @@ import Agent10 from './assets/img/agents/agent10.png';
 import Agent11 from './assets/img/agents/agent11.png';
 import Agent12 from './assets/img/agents/agent12.png';
 
+import Reviewer1 from './assets/img/reviewers/people01.png';
+import Reviewer2 from './assets/img/reviewers/people02.png';
+import Reviewer3 from './assets/img/reviewers/people03.png';
+
 export type agentType = {
     image: string;
     name: string;
@@ -76,6 +80,41 @@ export type housesType = {
     price: string;
     agent: agentType;
 };
+
+export type reviewType = {
+    id: number;
+    name: string;
+    photo: string;
+    message: string;
+    date: string;
+};
+
+export const reviewersData: reviewType[] = [
+    {
+        id: 1,
+        name: 'Stacy Jensen',
+        photo: Reviewer1,
+        date: '15.01.2023',
+        message:
+            'This housing rental website is a lifesaver! I was in a time crunch and needed to find a new apartment quickly, and this platform delivered. The search functionality made it easy to find a rental property that met my criteria. ',
+    },
+    {
+        id: 2,
+        name: 'Steve Mark',
+        photo: Reviewer2,
+        date: '17.12.2022',
+        message:
+            'I had an amazing experience with this housing rental website. The platform is user-friendly and makes it incredibly easy to find a suitable rental property. The search filters were especially helpful, allowing me to narrow down my options based on my specific needs.',
+    },
+    {
+        id: 3,
+        name: 'Kenn Gallagher',
+        photo: Reviewer3,
+        date: '22.11.2022',
+        message:
+            'I had a wonderful experience using this housing rental website. The listings were comprehensive and accurate, and the booking process was very straightforward. I appreciated the transparency and honesty of the platform, which made me feel confident and secure in my rental decision.',
+    },
+];
 
 export const housesData: housesType[] = [
     {
