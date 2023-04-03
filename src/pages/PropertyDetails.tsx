@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { BiBed, BiBath, BiArea } from 'react-icons/bi';
 import { useParams, Link } from 'react-router-dom';
 import { useAppSelector } from '../hooks/redux';
+import Toastify from 'toastify-js';
 
 const PropertyDetails = () => {
     const { houses } = useAppSelector((state) => state.house);
     const { id } = useParams();
+
+    const nameRef = useRef<HTMLInputElement>(null);
+    const emailRef = useRef<HTMLInputElement>(null);
+    const phoneRef = useRef<HTMLInputElement>(null);
+    const messageRef = useRef<HTMLTextAreaElement>(null);
 
     if (!id) {
         return <div>Ошибка, такого дома нет</div>;
@@ -16,6 +22,33 @@ const PropertyDetails = () => {
     if (!mainHouse) {
         return <div>Ошибка, такого дома нет</div>;
     }
+
+    const handleSendMessage = () => {
+        Toastify({
+            text: 'Message sent!',
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: 'bottom', // `top` or `bottom`
+            position: 'center', // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            className:
+                'fixed bg-violet-700 text-white px-5 py-4 rounded flex gap-2 right-2 bottom-2',
+        }).showToast();
+
+        if (
+            !nameRef.current ||
+            !emailRef.current ||
+            !phoneRef.current ||
+            !messageRef.current
+        )
+            return;
+
+        nameRef.current.value = '';
+        emailRef.current.value = '';
+        phoneRef.current.value = '';
+        messageRef.current.value = '';
+    };
 
     return (
         <section>
@@ -82,26 +115,34 @@ const PropertyDetails = () => {
                                 type='text'
                                 className='h-14 w-full rounded border border-gray-300 px-4 text-sm outline-none focus:border-violet-700'
                                 placeholder='Name*'
+                                ref={nameRef}
                             />
                             <input
                                 type='email'
                                 className='h-14 w-full rounded border border-gray-300 px-4 text-sm outline-none focus:border-violet-700'
                                 placeholder='Email*'
+                                ref={emailRef}
                             />
                             <input
                                 type='tel'
                                 className='h-14 w-full rounded border border-gray-300 px-4 text-sm outline-none focus:border-violet-700'
                                 placeholder='Phone*'
+                                ref={phoneRef}
                             />
                             <textarea
                                 className='h-36 w-full resize-none rounded border border-gray-300 p-4 text-sm text-gray-400 outline-none focus:border-violet-700'
                                 placeholder='Message*'
-                                defaultValue='Hello, I am interested in [Modern apartament]'
+                                defaultValue={
+                                    'Hello, I am interested in ' +
+                                    mainHouse.name
+                                }
+                                ref={messageRef}
                             ></textarea>
                             <div className='flex flex-col gap-2 sm:flex-row'>
                                 <button
                                     type='button'
                                     className='w-full rounded bg-violet-700 p-4 text-sm text-white transition hover:bg-violet-800'
+                                    onClick={handleSendMessage}
                                 >
                                     Send message
                                 </button>
