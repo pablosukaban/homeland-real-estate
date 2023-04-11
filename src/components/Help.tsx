@@ -7,13 +7,13 @@ const Help = () => {
                 <div className='flex flex-col items-center justify-between gap-y-4 md:flex-row'>
                     <div className='text-center text-white md:text-start'>
                         <h1 className='text-2xl font-semibold'>
-                            Do You Have Questions?
+                            Остались вопросы?
                         </h1>
-                        <p>Contact us and we will help you</p>
+                        <p>Свяжитесь с нами и мы вам поможем</p>
                     </div>
                     <div className=''>
                         <button className='rounded-full bg-white px-5 py-4 text-xl text-violet-700 transition hover:text-violet-900'>
-                            Contact Us Today
+                            Свяжитесь с нами сегодня
                         </button>
                     </div>
                 </div>

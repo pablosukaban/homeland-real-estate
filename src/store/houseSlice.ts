@@ -16,11 +16,11 @@ type housesStateType = {
 const initialState: housesStateType = {
     houses: housesData,
     filteredHouses: housesData,
-    countries: ['Location (any)', 'United States', 'Canada'],
-    country: 'Location (any)',
-    price: 'Price range (any)',
+    countries: ['Расположение (любой)', 'США', 'Канада'],
+    country: 'Расположение (любой)',
+    price: 'Диапазон цен (любой)',
     prices: [
-        'Price range (any)',
+        'Диапазон цен (любой)',
         '100000 - 130000',
         '130000 - 160000',
         '160000 - 190000',
@@ -28,13 +28,13 @@ const initialState: housesStateType = {
         '10000 - 30000',
         '30000 - 40000',
     ],
-    properties: ['Property type (any)', 'Apartament', 'House'],
-    property: 'Property type (any)',
+    properties: ['Тип жилья (любой)', 'Апартаменты', 'Дом'],
+    property: 'Тип жилья (любой)',
     reviewers: reviewersData,
 };
 
 const isDefault = (s: string) => {
-    return s.split(' ').includes('(any)');
+    return s.split(' ').includes('(любой)');
 };
 
 const getMinPriceNum = (p: string) => {

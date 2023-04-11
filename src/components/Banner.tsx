@@ -8,12 +8,12 @@ const Banner = () => {
             <div className='flex flex-col lg:flex-row'>
                 <div className='flex flex-1 flex-col items-center justify-center px-4 text-center lg:ml-8 lg:items-start lg:px-0 lg:text-left xl:ml-[135px]'>
                     <h1 className='mb-6 text-4xl font-semibold leading-none lg:text-[58px]'>
-                        <span className='text-violet-700'>Rent</span> Your Dream
-                        House With Us.
+                        <span className='text-violet-700'>Арендуйте</span> дом
+                        своей мечты вместе с нами.
                     </h1>
                     <p className='mb-8 max-w-[480px]'>
-                        Discover the ultimate vacation experience with our
-                        premier house rental website.
+                        Откройте для себя незабываемые впечатления от отпуска с
+                        нашим первоклассным веб-сайтом по аренде домов.
                     </p>
                 </div>
                 <div className=' hidden flex-1 items-end justify-end lg:flex'>

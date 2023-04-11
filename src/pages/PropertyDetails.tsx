@@ -112,7 +112,11 @@ const PropertyDetails = () => {
                                 <p>{mainHouse.surface}</p>
                             </div>
                         </div>
-                        <p>{mainHouse.description}</p>
+                        {mainHouse.description.map((item) => (
+                            <p key={item} className='mb-2'>
+                                {item}
+                            </p>
+                        ))}
                     </div>
                     <div className='mb-8 w-full flex-1 rounded-lg border border-gray-300 bg-white px-6 py-8'>
                         <div className='mb-8 flex items-center gap-x-4'>

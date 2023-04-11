@@ -11,13 +11,13 @@ const Header = () => {
                 </Link>
                 <div className='flex items-center gap-6'>
                     <Link className='transition hover:text-violet-900' to=''>
-                        Log in
+                        Вход
                     </Link>
                     <Link
                         className='rounded-lg bg-violet-700 px-4 py-3 text-white hover:bg-violet-800'
                         to=''
                     >
-                        Sign up
+                        Регистрация
                     </Link>
                 </div>
             </div>

@@ -11,8 +11,8 @@ const Reviewers = () => {
                 <div className='flex flex-col'>
                     <div className='mb-4 text-center text-2xl'>
                         <h1>
-                            What <span className='text-violet-500'>people</span>{' '}
-                            are saying about us
+                            Что <span className='text-violet-500'>люди</span>{' '}
+                            говорят о нас
                         </h1>
                     </div>
                     <div className='grid gap-4 md:grid-cols-3 lg:gap-8'>

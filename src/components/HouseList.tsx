@@ -32,8 +32,8 @@ const HouseList = () => {
 
     if (currentItems.length < 1) {
         return (
-            <div className='mt-48 text-center text-3xl text-gray-400'>
-                Sorry, nothing found
+            <div className='my-48 text-center text-3xl text-gray-400'>
+                Извините, ничего не найдено
             </div>
         );
     }
@@ -43,8 +43,8 @@ const HouseList = () => {
             <div className='container mx-auto'>
                 <div className='flex flex-col items-center justify-between gap-2 px-[20px] md:flex-row'>
                     <h1 className='text-2xl'>
-                        <span className='text-violet-700'>Available</span>{' '}
-                        Houses
+                        <span className='text-violet-700'>Доступные</span>{' '}
+                        жилища
                     </h1>
                     <div className='flex items-center justify-start gap-4'>
                         {totalPages.length > 1 &&
