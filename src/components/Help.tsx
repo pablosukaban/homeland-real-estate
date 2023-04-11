@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Help = () => {
     return (
@@ -12,9 +13,11 @@ const Help = () => {
                         <p>Свяжитесь с нами и мы вам поможем</p>
                     </div>
                     <div className=''>
-                        <button className='rounded-full bg-white px-5 py-4 text-xl text-violet-700 transition hover:text-violet-900'>
-                            Свяжитесь с нами сегодня
-                        </button>
+                        <Link to='/contact'>
+                            <button className='rounded-full bg-white px-5 py-4 text-xl text-violet-700 transition hover:text-violet-900'>
+                                Свяжитесь с нами сегодня
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
