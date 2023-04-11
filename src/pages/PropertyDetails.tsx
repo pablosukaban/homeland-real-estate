@@ -3,6 +3,7 @@ import { BiBed, BiBath, BiArea } from 'react-icons/bi';
 import { useParams, Link } from 'react-router-dom';
 import { useAppSelector } from '../hooks/redux';
 import Toastify from 'toastify-js';
+import { convertFootToMeter } from '../utils';
 
 const PropertyDetails = () => {
     const { houses } = useAppSelector((state) => state.house);
@@ -109,7 +110,7 @@ const PropertyDetails = () => {
                             </div>
                             <div className='flex items-center gap-x-2'>
                                 <BiArea className='text-2xl' />
-                                <p>{mainHouse.surface}</p>
+                                <p>{convertFootToMeter(mainHouse.surface)}</p>
                             </div>
                         </div>
                         {mainHouse.description.map((item) => (
@@ -131,7 +132,7 @@ const PropertyDetails = () => {
                                     {mainHouse.agent.name}
                                 </p>
                                 <Link to='' className='text-sm text-violet-700'>
-                                    View Listings
+                                    Показать записи
                                 </Link>
                             </div>
                         </div>
@@ -139,26 +140,32 @@ const PropertyDetails = () => {
                             <input
                                 type='text'
                                 className='h-14 w-full rounded border border-gray-300 px-4 text-sm outline-none focus:border-violet-700'
-                                placeholder='Name*'
+                                placeholder='Имя *'
+                                ref={nameRef}
+                            />
+                            <input
+                                type='text'
+                                className='h-14 w-full rounded border border-gray-300 px-4 text-sm outline-none focus:border-violet-700'
+                                placeholder='Фамилия *'
                                 ref={nameRef}
                             />
                             <input
                                 type='email'
                                 className='h-14 w-full rounded border border-gray-300 px-4 text-sm outline-none focus:border-violet-700'
-                                placeholder='Email*'
+                                placeholder='Почта *'
                                 ref={emailRef}
                             />
                             <input
                                 type='tel'
                                 className='h-14 w-full rounded border border-gray-300 px-4 text-sm outline-none focus:border-violet-700'
-                                placeholder='Phone*'
+                                placeholder='Телефон *'
                                 ref={phoneRef}
                             />
                             <textarea
                                 className='h-36 w-full resize-none rounded border border-gray-300 p-4 text-sm text-gray-400 outline-none focus:border-violet-700'
-                                placeholder='Message*'
+                                placeholder='Сообщение *'
                                 defaultValue={
-                                    'Hello, I am interested in ' +
+                                    'Здравствуйте, меня заинтересовало жилье ' +
                                     mainHouse.name
                                 }
                                 ref={messageRef}
@@ -169,13 +176,13 @@ const PropertyDetails = () => {
                                     className='w-full rounded bg-violet-700 p-4 text-sm text-white transition hover:bg-violet-800'
                                     onClick={handleSendMessage}
                                 >
-                                    Send message
+                                    Отправить
                                 </button>
                                 <button
                                     type='button'
                                     className='w-full rounded border border-violet-700 p-4 text-sm text-violet-700 transition hover:border-violet-500 hover:text-violet-500'
                                 >
-                                    Call
+                                    Позвонить
                                 </button>
                             </div>
                         </form>

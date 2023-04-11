@@ -1,6 +1,7 @@
 import React from 'react';
 import { housesType } from '../data';
 import { BiBed, BiBath, BiArea } from 'react-icons/bi';
+import { convertFootToMeter } from '../utils';
 
 interface HouseProps {
     houseObj: housesType;
@@ -47,7 +48,7 @@ const House = ({ houseObj }: HouseProps) => {
                     <div className='text-[20px]'>
                         <BiArea />
                     </div>
-                    <div>{surface}</div>
+                    <div>{convertFootToMeter(surface)}</div>
                 </div>
             </div>
             <div className='mb-4 text-lg font-semibold text-violet-600'>

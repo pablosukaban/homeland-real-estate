@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import PropertyDetails from './pages/PropertyDetails';
 import { Routes, Route } from 'react-router-dom';
 import ContactUs from './pages/ContactUs';
+import Faq from './pages/Faq';
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/property/:id' element={<PropertyDetails />} />
                 <Route path='/contact' element={<ContactUs />} />
+                <Route path='/faq' element={<Faq />} />
             </Routes>
             <Footer />
         </div>

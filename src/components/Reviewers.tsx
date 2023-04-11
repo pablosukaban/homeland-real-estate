@@ -15,7 +15,7 @@ const Reviewers = () => {
                             говорят о нас
                         </h1>
                     </div>
-                    <div className='grid gap-4 md:grid-cols-3 lg:gap-8'>
+                    <div className='grid gap-4 lg:grid-cols-3 lg:gap-8'>
                         {reviewers.map((r) => (
                             <Review key={r.id} reviewer={r} />
                         ))}
