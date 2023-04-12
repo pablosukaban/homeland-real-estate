@@ -10,12 +10,15 @@ const Header = () => {
                     <img src={Logo} alt='Logo' />
                 </Link>
                 <div className='flex items-center gap-6'>
-                    <Link className='transition hover:text-violet-900' to=''>
+                    <Link
+                        className='transition hover:text-violet-900'
+                        to='/login'
+                    >
                         Вход
                     </Link>
                     <Link
                         className='rounded-lg bg-violet-700 px-4 py-3 text-white transition hover:bg-violet-800'
-                        to=''
+                        to='/login'
                     >
                         Регистрация
                     </Link>
