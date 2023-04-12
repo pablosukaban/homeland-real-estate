@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export const ContactInfoCard = () => {
     return (
-        <div className='bg-violet-600 px-10 py-8 text-base text-white md:text-lg'>
+        <div className='bg-violet-600 p-4 text-base text-white md:px-10 md:py-8 md:text-lg'>
             <h2 className='font-semibold'>HomeLand Inc.</h2>
             <p>2690 Cheshire Road Stratford, GA 06497</p>
             <h2>
@@ -14,15 +14,14 @@ export const ContactInfoCard = () => {
 
 export const CustomerSupportCard = () => {
     return (
-        <div className='bg-violet-600 px-10 py-8 text-base text-white md:text-lg'>
+        <div className='bg-violet-600 p-4 text-base text-white md:px-10 md:py-8 md:text-lg'>
             <h2 className='font-semibold'>Обслуживание клиентов</h2>
             <h3>
                 <span className='font-semibold'>Время работы:</span> 9:00 –
                 18:00
             </h3>
             <h3>
-                <span className='font-semibold'>Почта:</span>{' '}
-                customersuccess@homeland.com
+                <span className='font-semibold'>Почта:</span> help@homeland.com
             </h3>
             <h3>
                 <span className='font-semibold'>
@@ -84,10 +83,12 @@ const ContactUs = () => {
                         <select
                             value={helpType}
                             onChange={handleHelpChange}
-                            className='block w-full rounded border border-gray-300 bg-white p-4 outline-none transition hover:border-gray-500 focus:border-indigo-500 md:p-6 '
+                            className='block w-full rounded border border-gray-300 bg-white p-4 font-primary outline-none transition hover:border-gray-500 focus:border-indigo-500 md:p-6 '
                         >
                             <option disabled>Как мы можем вам помочь? *</option>
-                            <option>Обслуживание клиентов</option>
+                            <option className='font-primary'>
+                                Обслуживание клиентов
+                            </option>
                             <option>Мне нужна помощь в поиске дома</option>
                             <option>Другое</option>
                         </select>
@@ -97,7 +98,7 @@ const ContactUs = () => {
                                 placeholder='Пожалуйста, опишите вашу проблему'
                             ></textarea>
                         )}
-                        <div className='flex flex-col gap-x-1 gap-y-2 md:flex-row'>
+                        <div className='flex w-full flex-col gap-x-1 gap-y-2 md:flex-row'>
                             <InputComp type='text' placeholder='Имя *' />
                             <InputComp type='text' placeholder='Фамилия *' />
                         </div>
@@ -106,7 +107,7 @@ const ContactUs = () => {
                             placeholder='Адрес электронной почты *'
                         />
                         <InputComp type='tel' placeholder='Номер телефона *' />
-                        <div className='flex flex-col gap-x-1 gap-y-2 md:flex-row'>
+                        <div className='flex w-full flex-col gap-x-1 gap-y-2 md:flex-row'>
                             <InputComp type='text' placeholder='Имя компании' />
                             <InputComp
                                 type='email'

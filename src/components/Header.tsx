@@ -14,7 +14,7 @@ const Header = () => {
                         Вход
                     </Link>
                     <Link
-                        className='rounded-lg bg-violet-700 px-4 py-3 text-white hover:bg-violet-800'
+                        className='rounded-lg bg-violet-700 px-4 py-3 text-white transition hover:bg-violet-800'
                         to=''
                     >
                         Регистрация
